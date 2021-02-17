@@ -938,7 +938,7 @@ $(document).ready(function(){
             output += "</div>"
             output += "</div>"
         	$("#boardUpdate").remove();
-        	$("#boardUpdateArea").after(output);
+        	$("#boardUpdateArea").html(output);
         }  
         
         
