@@ -101,6 +101,14 @@ public class BoardController {
 		return recommendNum;
 		
 	}
+	
+	/* 좋아요 업데이트 -1 */
+	@RequestMapping(value="/insertBorecommend2")
+	public @ResponseBody int insertBorecommend2(BoardDTO bDto2) {
+		int recommendNum2 = boardService.insertBorecommend2(bDto2);
+		System.out.println(recommendNum2);
+		return recommendNum2;
+	}
 
 	/* 글쓰기 페이지 이동 */
 	@RequestMapping(value="/gotoWrite")

@@ -198,7 +198,13 @@ public class BoardService {
 		int recommendNum = boardMapper.selectBorecommend(bonum);
 		return recommendNum;
 	}
-     
+	/* 좋아요 업데이트 2 */
+	public int insertBorecommend2(BoardDTO bDto2) {
+		boardMapper.insertBorecommend2(bDto2);
+		int bonum2 = bDto2.getBonum();
+		int recommendNum2 = boardMapper.selectBorecommend(bonum2);
+		return recommendNum2;
+	}
 	
 	 
 

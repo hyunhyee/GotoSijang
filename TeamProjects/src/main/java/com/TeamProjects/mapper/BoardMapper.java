@@ -44,6 +44,9 @@ public interface BoardMapper {
 	/* 좋아요 업데이트 */ 
 	public int insertBorecommend(BoardDTO bDto);
 	
+	/* 좋아요 업데이트2 */
+	public void insertBorecommend2(BoardDTO bDto2);
+	
 	/* 좋아요 숫자 가져오기 */
 	public int selectBorecommend(int bonum);
 	

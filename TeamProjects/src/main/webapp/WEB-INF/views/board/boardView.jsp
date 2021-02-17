@@ -818,7 +818,24 @@ $(document).ready(function(){
         	    },
         	});
         	
+        }else {
+        	$.ajax({
+        		type : "post",
+        		url : "insertBorecommend2",
+        		data : {
+        			"borecommend" : checkbox,
+        			"bonum" : bonum
+        		},
+        		dataType: "text",
+        	    success : function(borecommend) {
+                     updateBorecommend(borecommend);       	    	
+        	    },
+        	});
+        	
         }
+        
+        
+        
     });
         
         /* 좋아요 숫자 업데이트 */

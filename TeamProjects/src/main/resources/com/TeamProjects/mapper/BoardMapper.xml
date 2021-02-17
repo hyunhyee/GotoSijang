@@ -123,6 +123,11 @@
     UPDATE BOARD SET BORECOMMEND=BORECOMMEND+1 WHERE BONUM=#{bonum}
     </update> 
     
+     <!-- 좋아요2 -->
+   <update id="insertBorecommend2" parameterType="com.TeamProjects.dto.BoardDTO">
+    UPDATE BOARD SET BORECOMMEND=BORECOMMEND-1 WHERE BONUM=#{bonum}
+   </update>
+    
     <!-- 좋아요 숫자 가져오기 -->
     <select id="selectBorecommend" resultType="int">
     SELECT BORECOMMEND FROM BOARD WHERE BONUM = #{bonum}
