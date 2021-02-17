@@ -41,10 +41,16 @@ SELECT NVL(SUM(P.PRPRICE*C.PRCOUNT),0) FROM CART C INNER JOIN PRODUCTS P ON C.PR
  </select>
  
   
-  <!--  게시글쓰기 구매목록&상점코드 불러오기 --> 
- <select id="getWriteInfo" resultMap="cart">
+  <!--  게시글쓰기 구매목록&상점코드&가게이름 불러오기 --> 
+<!--  <select id="getWriteInfo" resultMap="cart">
   select STCODE,PRNAME,CACODE from CART, PRODUCTS where CART.PRCODE = PRODUCTS.PRCODE AND CART.MID = #{mid}
- </select> 
+ </select>  -->
+ <select id="getWriteInfo" resultMap="cart">
+ SELECT STORE.STCODE, PRNAME,STNAME FROM CART 
+INNER JOIN PRODUCTS ON CART.PRCODE = PRODUCTS.PRCODE 
+INNER JOIN STORE ON STORE.STCODE = PRODUCTS.STCODE
+WHERE CART.MID= #{mid}
+ </select>
   
   
   <resultMap type="com.TeamProjects.dto.CartDTO" id="cart"  >
